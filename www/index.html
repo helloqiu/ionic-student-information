@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+
+    <script type="text/javascript" src="js/getInfo.js"></script>
+  </head>
+  <body ng-app="starter">
+
+    <ion-pane>
+      <ion-header-bar class="bar bar-header bar-balanced">
+        <h1 class="title">信息查询</h1>
+        <button class="button ion-navicon-round"></button>
+      </ion-header-bar>
+      <ion-content class = "custom-container">
+        <div id="list">
+          <div class="list">
+            <label class="item item-input item-stacked-label">
+              <span class="input-label">学号</span>
+              <input type="text" placeholder="studentID" id="studentID">
+            </label>
+            <div style="text-align:center;">
+              <h1>or</h1>
+            </div>
+            <label class="item item-input item-stacked-label">
+              <span class="input-label">姓名</span>
+              <input type="text" placeholder="Name" id="name">
+            </label>
+            <label class="item item-input item-stacked-label">
+              <span class="input-label">服务器地址</span>
+              <input type="text" placeholder="Server" value="192.168.1.1" id="server">
+            </label>
+          </div>
+          <button class="button button-light button-block" onclick="getInfo()">查询</button>
+        </div>
+        <div id="infoScreen" class="list card" style="display:none;">
+          <div class="item item-avatar">
+            <h2 id="studentname"></h2>
+            <p id="studentid"></p>
+          </div>
+          <div class="item item-body">
+            <img src="" id="picture" class="full-image">
+            <p id="sex"></p>
+            <p id="socialid"></p>
+            <p id="college"></p>
+            <p id="special"></p>
+            <p> </p>
+            <p> </p>
+          </div>
+        </div>
+      </ion-content>
+
+      <div class="tabs tabs-icon-top tabs-balanced">
+          <a class="tab-item active" onclick="index()" id="index">
+            <i class="icon ion-home"></i>
+            Home
+          </a>
+          <a class="tab-item" id="info">
+            <i class="icon ion-star"></i>
+            Info
+          </a>
+        </div>
+    </ion-pane>
+  </body>
+</html>
